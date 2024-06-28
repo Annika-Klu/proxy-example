@@ -1,0 +1,22 @@
+[
+  {
+    "proxyPath": "/feature/something",
+    "basePort": 5000,
+    "useMiddlewares": {
+      "prod": ["verifyFeatureAccess"],
+      "dev": [],
+      "staging": ["verifyFeatureAccess"]
+    },
+    "useOnProxyMethods": {
+      "dev": ["setCustomHeader"]
+    }
+  },
+  {
+    "proxyPath": "/json",
+    "proxyTargets": {
+      "prod": "https://jsonplaceholder.typicode.com",
+      "dev": "https://jsonplaceholder.typicode.com",
+      "staging": "https://jsonplaceholder.typicode.com"
+    }
+  }
+]
